@@ -1,0 +1,22 @@
+{
+    "name": "bviguier/forum-php2019-lt",
+    "description": "Lightning Talk for ForumPhp 2019",
+    "type": "project",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:b-viguier/reveal-php.git"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "bviguier/reveal-php": "dev-master"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Benoit Viguier",
+            "email": "benoit.viguier.pro+github@gmail.com"
+        }
+    ]
+}

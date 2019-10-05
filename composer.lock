@@ -1,0 +1,79 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "548974f44c1b0d9adfe64f64eeeef2e6",
+    "packages": [
+        {
+            "name": "bviguier/reveal-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:b-viguier/reveal-php.git",
+                "reference": "36de037cc36a3790e81077487f1596d243b0691f"
+            },
+            "require": {
+                "ext-imagick": "^3.4",
+                "ext-sdl": "^2.1",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "phpstan/phpstan-shim": "^0.11.8",
+                "sensiolabs-de/deptrac-shim": "^0.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RevealPhp\\": "src/"
+                }
+            },
+            "scripts": {
+                "analyse": [
+                    "@php ./vendor/bin/phpstan --level=max analyse src/ examples/"
+                ],
+                "cs": [
+                    "@php ./vendor/bin/php-cs-fixer fix --dry-run --diff"
+                ],
+                "cs-fix": [
+                    "@php ./vendor/bin/php-cs-fixer fix"
+                ],
+                "cs-ci": [
+                    "@php ./vendor/bin/php-cs-fixer fix --dry-run --using-cache=no --verbose"
+                ],
+                "deps": [
+                    "@php ./vendor/bin/deptrac"
+                ],
+                "ci": [
+                    "@analyse",
+                    "@cs-ci",
+                    "@deps"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Benoit Viguier",
+                    "email": "benoit.viguier.pro+github@gmail.com"
+                }
+            ],
+            "description": "Create and run presentation from Php.",
+            "time": "2019-08-20T20:29:47+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "bviguier/reveal-php": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^7.2"
+    },
+    "platform-dev": []
+}
