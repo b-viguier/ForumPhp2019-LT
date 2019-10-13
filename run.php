@@ -1,10 +1,10 @@
 <?php
 require __DIR__.'/vendor/autoload.php';
 
-use RevealPhp\Adapter;
-use RevealPhp\Geometry;
-use RevealPhp\Graphic;
-use RevealPhp\Presentation;
+use PhPresent\Adapter;
+use PhPresent\Geometry;
+use PhPresent\Graphic;
+use PhPresent\Presentation;
 
 $bitmapLoader = new Adapter\Imagick\Graphic\BitmapLoader();
 $presentation = new Presentation\SlideShow(

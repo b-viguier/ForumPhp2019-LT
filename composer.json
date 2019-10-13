@@ -5,12 +5,12 @@
     "repositories": [
         {
             "type": "git",
-            "url": "git@github.com:b-viguier/reveal-php.git"
+            "url": "git@github.com:b-viguier/PhPresent.git"
         }
     ],
     "require": {
         "php": "^7.2",
-        "bviguier/reveal-php": "dev-master"
+        "bviguier/phpresent": "dev-master"
     },
     "license": "MIT",
     "authors": [

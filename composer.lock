@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "548974f44c1b0d9adfe64f64eeeef2e6",
+    "content-hash": "165c4212fb41837d4cca37fe1df0d8d2",
     "packages": [
         {
-            "name": "bviguier/reveal-php",
+            "name": "bviguier/phpresent",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:b-viguier/reveal-php.git",
-                "reference": "36de037cc36a3790e81077487f1596d243b0691f"
+                "url": "git@github.com:b-viguier/PhPresent.git",
+                "reference": "bee4ccccba290da8ee6cf14df3dcd4a96b3d362c"
             },
             "require": {
                 "ext-imagick": "^3.4",
@@ -26,7 +26,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "RevealPhp\\": "src/"
+                    "PhPresent\\": "src/"
                 }
             },
             "scripts": {
@@ -61,14 +61,14 @@
                 }
             ],
             "description": "Create and run presentation from Php.",
-            "time": "2019-08-20T20:29:47+00:00"
+            "time": "2019-10-13T13:37:42+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "bviguier/reveal-php": 20
+        "bviguier/phpresent": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
