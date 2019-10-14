@@ -9,9 +9,11 @@ use PhPresent\Presentation;
 $bitmapLoader = new Adapter\Imagick\Graphic\BitmapLoader();
 $presentation = new Presentation\SlideShow(
     Graphic\Theme::createDefault(),
-    new Presentation\Template\Simple\FullscreenImage($bitmapLoader->fromFile(__DIR__.'/assets/background.png'))
+    new Presentation\Template\Simple\FullscreenColor(Graphic\Color::white())
 );
+
 $presentation
+    ->addSlide(new \ForumPhp2019\Slides\Mysterious())
     ->addSlide(new Presentation\Template\Simple\TitleAndSubtitle('Lightning Talk', 'ForumPhp 2019'))
     ->addSlide(new Presentation\Template\Simple\BigTitle("What do you do\nwith PHP?"))
     ->addSlide(new Presentation\Template\Simple\BigTitle("Have Fun!"));

@@ -18,5 +18,10 @@
             "name": "Benoit Viguier",
             "email": "benoit.viguier.pro+github@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "ForumPhp2019\\": "src/"
+        }
+    }
 }
