@@ -1,3 +1,4 @@
+#!/usr/bin/env php -d memory_limit=2048M
 <?php
 require __DIR__.'/vendor/autoload.php';
 
