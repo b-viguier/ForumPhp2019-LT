@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:b-viguier/PhPresent.git",
-                "reference": "2001748a64cfbdcf8638e03402302cc64a69d7ec"
+                "reference": "b6eb58583aac5480192841da93dc50bff00f26f9"
             },
             "require": {
                 "ext-imagick": "^3.4",
@@ -61,7 +61,7 @@
                 }
             ],
             "description": "Create and run presentation from Php.",
-            "time": "2019-10-13T19:49:34+00:00"
+            "time": "2019-10-14T19:42:09+00:00"
         }
     ],
     "packages-dev": [],

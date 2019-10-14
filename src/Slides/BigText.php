@@ -11,16 +11,19 @@ use PhPresent\Presentation\Timestamp;
 
 class BigText implements Slide
 {
-    public function __construct(string $text)
+    public function __construct(string $text, Graphic\Color $color = null)
     {
         $this->text = $text;
+        $this->color = $color ?? Graphic\Color::black();
     }
 
     public function preload(Screen $screen, Graphic\Drawer $drawer, Graphic\Theme $theme): void
     {
         // Initial guess
         $font = Graphic\Font::createDefaultSans()
-            ->withStyle(Graphic\Font::STYLE_BOLD);
+            ->withStyle(Graphic\Font::STYLE_BOLD)
+        ;
+        $font = $font->withBrush($font->brush()->withFillColor($this->color));
         $text = $drawer->createText($this->text, $font);
 
         // Fix font size to fit the screen
@@ -49,4 +52,6 @@ class BigText implements Slide
     private $frame;
     /** @var string */
     private $text;
+    /** @var Graphic\Color */
+    private $color;
 }
