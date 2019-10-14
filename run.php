@@ -5,6 +5,7 @@ use PhPresent\Adapter;
 use PhPresent\Geometry;
 use PhPresent\Graphic;
 use PhPresent\Presentation;
+use ForumPhp2019\Slides;
 
 $bitmapLoader = new Adapter\Imagick\Graphic\BitmapLoader();
 $presentation = new Presentation\SlideShow(
@@ -13,10 +14,12 @@ $presentation = new Presentation\SlideShow(
 );
 
 $presentation
-    ->addSlide(new \ForumPhp2019\Slides\Mysterious())
-    ->addSlide(new Presentation\Template\Simple\TitleAndSubtitle('Lightning Talk', 'ForumPhp 2019'))
-    ->addSlide(new Presentation\Template\Simple\BigTitle("What do you do\nwith PHP?"))
-    ->addSlide(new Presentation\Template\Simple\BigTitle("Have Fun!"));
+    ->addSlide(new Slides\Mysterious())
+    ->addSlide(new Slides\BigText("What do you\ndo with\nPHP?"))
+    ->addSlide(new Slides\BigText("Websites?"))
+    ->addSlide(new Slides\BigText("API?"))
+    ->addSlide(new Slides\BigText("CLI?"))
+;
 
 $screen = Presentation\Screen::fromSizeWithExpectedRatio(Geometry\Size::fromDimensions(800, 450));
 $engine = new Adapter\SDL\Render\Engine($screen);
