@@ -29,7 +29,11 @@ $presentation
     ->addSlide(new Slides\BigText("GUI?", Graphic\Color::red()))
     ->addSlide(new Slides\BigText("Video\nGames?", Graphic\Color::green()))
     ->addSlide(new Slides\Gif(
-            $bitmapSeqLoader->fromFile(__DIR__ . '/assets/confused.gif'))
+        $bitmapSeqLoader->fromFile(__DIR__ . '/assets/confused.gif'))
+    )
+    ->addSlide(new Slides\Quote(
+        $bitmapLoader->fromFile(__DIR__.'/assets/rasmus.png'),
+        "There's an\nextension\nfor that!")
     )
 ;
 
