@@ -35,8 +35,16 @@ $presentation
     )
     ->addSlide(new Slides\BigImage(
     // Bug workaround: PNG has to be converted in BMP
-        $drawer->drawBitmap(
+        $drawer->clear()->drawBitmap(
             $bitmap = $bitmapLoader->fromFile(__DIR__.'/assets/elephpant.png'),
+            Geometry\Rect::fromSize($bitmap->size()),
+            Geometry\Rect::fromSize($bitmap->size())
+        )->toBitmap($bitmap->size())
+    ))
+    ->addSlide(new Slides\BigImage(
+    // Bug workaround: PNG has to be converted in BMP
+        $drawer->clear()->drawBitmap(
+            $bitmap = $bitmapLoader->fromFile(__DIR__.'/assets/SDL.png'),
             Geometry\Rect::fromSize($bitmap->size()),
             Geometry\Rect::fromSize($bitmap->size())
         )->toBitmap($bitmap->size())

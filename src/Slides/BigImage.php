@@ -22,8 +22,8 @@ class BigImage implements Slide
         // Centering
         $rect = Rect::fromSize($this->bitmap->size())
             ->scaledBy(min(
-                $screen->fullArea()->size()->width() / $this->bitmap->size()->width(),
-                $screen->fullArea()->size()->height() / $this->bitmap->size()->height(),
+                $screen->safeArea()->size()->width() / $this->bitmap->size()->width(),
+                $screen->safeArea()->size()->height() / $this->bitmap->size()->height(),
             ))
             ->centeredOn($screen->safeArea()->center())
         ;
