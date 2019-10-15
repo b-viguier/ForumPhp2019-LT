@@ -52,7 +52,11 @@ $presentation
     ->addSlide(new Slides\Quote(
             $bitmapLoader->fromFile(__DIR__.'/assets/rasmus.png'),
             "There's an\nextension\nfor that!")
-    );
+    )
+    ->addSlide(new Slides\Gif(
+            $bitmapSeqLoader->fromFile(__DIR__.'/assets/phpokoban.gif'))
+    )
+;
 
 $screen = Presentation\Screen::fromSizeWithExpectedRatio(Geometry\Size::fromDimensions(800, 450));
 $engine = new Adapter\SDL\Render\Engine($screen);
