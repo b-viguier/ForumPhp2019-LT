@@ -56,6 +56,9 @@ $presentation
     ->addSlide(new Slides\Gif(
             $bitmapSeqLoader->fromFile(__DIR__.'/assets/phpokoban.gif'))
     )
+    ->addSlide(new Slides\Gif(
+            $bitmapSeqLoader->fromFile(__DIR__.'/assets/inphpinity.gif'))
+    )
 ;
 
 $screen = Presentation\Screen::fromSizeWithExpectedRatio(Geometry\Size::fromDimensions(800, 450));
