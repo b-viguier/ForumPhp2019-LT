@@ -8,18 +8,26 @@ use PhPresent\Graphic;
 use PhPresent\Presentation;
 use ForumPhp2019\Slides;
 
+$defaultTheme = Graphic\Theme::createDefault();
+$myTheme = $defaultTheme
+    ->withFontH1(Graphic\RelativeFont::fromFont(
+            Graphic\Font::createDefaultSans()->withSize(20),
+            100
+    ))
+    ;
+
 $bitmapLoader = new Adapter\Imagick\Graphic\BitmapLoader();
 $bitmapSeqLoader = new Adapter\Imagick\Graphic\BitmapSequenceLoader();
 $presentation = new Presentation\SlideShow(
-    Graphic\Theme::createDefault(),
+    $myTheme,
     new Presentation\Template\Simple\FullscreenColor(Graphic\Color::white())
 );
 
 $drawer = new Adapter\Imagick\Graphic\Drawer();
 
 $presentation
-    ->addSlide(new Slides\Mysterious())
-    ->addSlide(new Slides\BigText("What do you\ndo with\nPHP?"))
+    ->addSlide($mysteriousSlide = new Slides\Mysterious())
+    ->addSlide($whatDoYouDoSlide = new Slides\BigText("What do you\ndo with\nPHP?"))
     ->addSlide(new Slides\BigText("Website?"))
     ->addSlide(new Slides\BigText("API?"))
     ->addSlide(new Slides\BigText("CLI?"))
@@ -53,12 +61,35 @@ $presentation
             $bitmapLoader->fromFile(__DIR__.'/assets/rasmus.png'),
             "There's an\nextension\nfor that!")
     )
+    ->addSlide(new Slides\GitRepo(
+        "PHP-SDL",
+        "https://github.com/Ponup/php-sdl"
+    ))
+    ->addSlide(new Slides\GitRepo(
+            "PhpOkoban",
+        "https://github.com/b-viguier/PhpOkoban"
+    ))
     ->addSlide(new Slides\Gif(
             $bitmapSeqLoader->fromFile(__DIR__.'/assets/phpokoban.gif'))
     )
+    ->addSlide(new Slides\GitRepo(
+        "Inphpinity",
+        "https://github.com/b-viguier/Inphpinity"
+    ))
     ->addSlide(new Slides\Gif(
             $bitmapSeqLoader->fromFile(__DIR__.'/assets/inphpinity.gif'))
     )
+    ->addSlide(new Slides\GitRepo(
+        "PhPresent",
+        "https://github.com/b-viguier/PhPresent"
+    ))
+    ->addSlide(new Slides\BigText("Why?!?"))
+    ->addSlide(new Slides\Quote(
+            $bitmapLoader->fromFile(__DIR__.'/assets/twain.jpg'),
+            "They did not\nknow it was\nimpossible,\nso they did it\n…\nin PHP")
+    )
+    ->addSlide($mysteriousSlide = new Slides\Mysterious())
+    ->addSlide($whatDoYouDoSlide = new Slides\BigText("What do you\ndo with\nPHP?"))
 ;
 
 $screen = Presentation\Screen::fromSizeWithExpectedRatio(Geometry\Size::fromDimensions(800, 450));

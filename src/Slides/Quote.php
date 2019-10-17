@@ -26,7 +26,7 @@ class Quote implements Slide
         $this->frame = $bgSlide->render(Timestamp::origin(0), $screen, $drawer, $theme);
 
         $drawer->clear();
-        $font = $theme->fontH1()->relativeTo($screen->safeArea()->size()->height())->withStyle(Graphic\Font::STYLE_ITALIC);
+        $font = $theme->fontH1()->relativeTo($screen->safeArea()->size()->height()*0.6)->withStyle(Graphic\Font::STYLE_ITALIC);
         $font = $font->withBrush($font->brush()->withFillColor(Graphic\Color::white())->withStrokeColor(Graphic\Color::white()));
         $text = $drawer->createText(
             $this->text,
