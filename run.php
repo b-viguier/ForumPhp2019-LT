@@ -25,6 +25,7 @@ $presentation = new Presentation\SlideShow(
 
 $drawer = new Adapter\Imagick\Graphic\Drawer();
 
+echo "Creating slides…\n";
 $presentation
     ->addSlide($mysteriousSlide = new Slides\Mysterious())
     ->addSlide($whatDoYouDoSlide = new Slides\BigText("What do you\ndo with\nPHP?"))
@@ -90,6 +91,10 @@ $presentation
                 Geometry\Rect::fromSize($bitmap->size())
             )->toBitmap($bitmap->size()))
     )
+    ->addSlide(new Slides\GitRepo(
+        "ForumPhp2019-LT",
+        "https://github.com/b-viguier/ForumPhp2019-LT"
+    ))
     ->addSlide(new Slides\BigText("Why?!?"))
     ->addSlide(new Slides\Quote(
             $bitmapLoader->fromFile(__DIR__.'/assets/twain.jpg'),
