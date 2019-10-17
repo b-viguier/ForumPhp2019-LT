@@ -44,7 +44,7 @@ $presentation
     ->addSlide(new Slides\BigImage(
     // Bug workaround: PNG has to be converted in BMP
         $drawer->clear()->drawBitmap(
-            $bitmap = $bitmapLoader->fromFile(__DIR__.'/assets/elephpant.png'),
+            $bitmap = $bitmapLoader->fromFile(__DIR__.'/assets/php.png'),
             Geometry\Rect::fromSize($bitmap->size()),
             Geometry\Rect::fromSize($bitmap->size())
         )->toBitmap($bitmap->size())
@@ -79,10 +79,17 @@ $presentation
     ->addSlide(new Slides\Gif(
             $bitmapSeqLoader->fromFile(__DIR__.'/assets/inphpinity.gif'))
     )
-    ->addSlide(new Slides\GitRepo(
-        "PhPresent",
-        "https://github.com/b-viguier/PhPresent"
-    ))
+    ->addSlide(
+        new Slides\PhPresent(
+            "PhPresent",
+            "https://github.com/b-viguier/PhPresent",
+            // Bug workaround: PNG has to be converted in BMP
+            $drawer->clear()->drawBitmap(
+                $bitmap = $bitmapLoader->fromFile(__DIR__.'/assets/php.png'),
+                Geometry\Rect::fromSize($bitmap->size()),
+                Geometry\Rect::fromSize($bitmap->size())
+            )->toBitmap($bitmap->size()))
+    )
     ->addSlide(new Slides\BigText("Why?!?"))
     ->addSlide(new Slides\Quote(
             $bitmapLoader->fromFile(__DIR__.'/assets/twain.jpg'),

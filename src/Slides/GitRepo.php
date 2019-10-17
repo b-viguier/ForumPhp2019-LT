@@ -11,10 +11,10 @@ use PhPresent\Presentation\Timestamp;
 
 class GitRepo implements Slide
 {
-    public function __construct(string $title, string $subTitle)
+    public function __construct(string $title, string $url)
     {
         $this->title = $title;
-        $this->url = $subTitle;
+        $this->url = $url;
     }
 
     public function preload(Screen $screen, Graphic\Drawer $drawer, Graphic\Theme $theme): void
