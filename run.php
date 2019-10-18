@@ -66,6 +66,22 @@ $presentation
         "PHP-SDL",
         "https://github.com/Ponup/php-sdl"
     ))
+    ->addSlide(new Slides\BigImage(
+    // Bug workaround: PNG has to be converted in BMP
+        $drawer->clear()->drawBitmap(
+            $bitmap = $bitmapLoader->fromFile(__DIR__.'/assets/SDL_Init.png'),
+            Geometry\Rect::fromSize($bitmap->size()),
+            Geometry\Rect::fromSize($bitmap->size())
+        )->toBitmap($bitmap->size())
+    ))
+    ->addSlide(new Slides\BigImage(
+    // Bug workaround: PNG has to be converted in BMP
+        $drawer->clear()->drawBitmap(
+            $bitmap = $bitmapLoader->fromFile(__DIR__.'/assets/SDL_poll.png'),
+            Geometry\Rect::fromSize($bitmap->size()),
+            Geometry\Rect::fromSize($bitmap->size())
+        )->toBitmap($bitmap->size())
+    ))
     ->addSlide(new Slides\GitRepo(
             "PhpOkoban",
         "https://github.com/b-viguier/PhpOkoban"
