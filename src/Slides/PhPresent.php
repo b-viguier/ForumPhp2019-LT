@@ -67,8 +67,9 @@ class PhPresent implements Slide
     {
         $lastTimestamp = $timestamp;
         while(true) {
+            $elapsed = min(abs($timestamp->slideRelative()-$lastTimestamp->slideRelative()), 500);
             $logoRect = Rect::fromTopLeftAndSize($this->logoSprite->origin(), $this->logoSprite->size());
-            $newLogoRect = $logoRect->movedBy($this->direction->scaledBy(($timestamp->slideRelative()-$lastTimestamp->slideRelative()) / 5));
+            $newLogoRect = $logoRect->movedBy($this->direction->scaledBy($elapsed / 5));
 
             // Bouncing
             if($newLogoRect->topLeft()->x() < $screen->fullArea()->topLeft()->x()) {
