@@ -163,6 +163,16 @@ $presentation
     )
     ->addSlide($mysteriousSlide = new Slides\Mysterious())
     ->addSlide($whatDoYouDoSlide = new Slides\BigText("What do you\ndo with\nPHP?"))
+    ->addSlide(new Slides\Fun(
+            "Have Fun!",
+            // Bug workaround: PNG has to be converted in BMP
+            $drawer->clear()->drawBitmap(
+                $bitmap = $bitmapLoader->fromFile(__DIR__.'/assets/elephpant.png'),
+                Geometry\Rect::fromSize($bitmap->size()),
+                Geometry\Rect::fromSize($bitmap->size())
+            )->toBitmap($bitmap->size())
+        )
+    )
 ;
 
 $screen = Presentation\Screen::fromSizeWithExpectedRatio(Geometry\Size::fromDimensions(800, 450));
