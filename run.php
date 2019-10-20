@@ -84,6 +84,49 @@ $presentation
             Geometry\Rect::fromSize($bitmap->size())
         )->toBitmap($bitmap->size())
     ))
+    ->addSlide(new Slides\BigImage(
+    // Bug workaround: PNG has to be converted in BMP
+        $drawer->clear()->drawBitmap(
+            $bitmap = $bitmapLoader->fromFile(__DIR__.'/assets/SDL_HelloWorld-1.png'),
+            Geometry\Rect::fromSize($bitmap->size()),
+            Geometry\Rect::fromSize($bitmap->size())
+        )->toBitmap($bitmap->size())
+    ))
+    ->addSlide(new Slides\TitleAndImage(
+        "Textures",
+        // Bug workaround: PNG has to be converted in BMP
+        $drawer->clear()->drawBitmap(
+            $bitmap = $bitmapLoader->fromFile(__DIR__.'/assets/SDL_texture.png'),
+            Geometry\Rect::fromSize($bitmap->size()),
+            Geometry\Rect::fromSize($bitmap->size())
+        )->toBitmap($bitmap->size())
+    ))
+    ->addSlide(new Slides\TitleAndImage(
+        "Rendering",
+        // Bug workaround: PNG has to be converted in BMP
+        $drawer->clear()->drawBitmap(
+            $bitmap = $bitmapLoader->fromFile(__DIR__.'/assets/SDL_render.png'),
+            Geometry\Rect::fromSize($bitmap->size()),
+            Geometry\Rect::fromSize($bitmap->size())
+        )->toBitmap($bitmap->size())
+    ))
+    ->addSlide(new Slides\BigImage(
+    // Bug workaround: PNG has to be converted in BMP
+        $drawer->clear()->drawBitmap(
+            $bitmap = $bitmapLoader->fromFile(__DIR__.'/assets/SDL_HelloWorld-2.png'),
+            Geometry\Rect::fromSize($bitmap->size()),
+            Geometry\Rect::fromSize($bitmap->size())
+        )->toBitmap($bitmap->size())
+    ))
+    ->addSlide(new Slides\TitleAndImage(
+        "Inputs",
+        // Bug workaround: PNG has to be converted in BMP
+        $drawer->clear()->drawBitmap(
+            $bitmap = $bitmapLoader->fromFile(__DIR__.'/assets/SDL_events.png'),
+            Geometry\Rect::fromSize($bitmap->size()),
+            Geometry\Rect::fromSize($bitmap->size())
+        )->toBitmap($bitmap->size())
+    ))
     ->addSlide(new Slides\GitRepo(
             "PhpOkoban",
         "https://github.com/b-viguier/PhpOkoban"
