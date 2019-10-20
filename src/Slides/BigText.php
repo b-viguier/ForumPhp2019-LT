@@ -23,7 +23,11 @@ class BigText implements Slide
         $font = Graphic\Font::createDefaultSans()
             ->withStyle(Graphic\Font::STYLE_BOLD)
         ;
-        $font = $font->withBrush($font->brush()->withFillColor($this->color));
+        $font = $font->withBrush(
+            $font->brush()
+                ->withFillColor($this->color)
+                ->withStrokeWidth(4)
+        );
         $text = $drawer->createText($this->text, $font);
 
         // Fix font size to fit the screen
