@@ -66,7 +66,8 @@ $presentation
         "PHP-SDL",
         "https://github.com/Ponup/php-sdl"
     ))
-    ->addSlide(new Slides\BigImage(
+    ->addSlide(new Slides\TitleAndImage(
+            "Initialization",
     // Bug workaround: PNG has to be converted in BMP
         $drawer->clear()->drawBitmap(
             $bitmap = $bitmapLoader->fromFile(__DIR__.'/assets/SDL_Init.png'),
@@ -74,7 +75,8 @@ $presentation
             Geometry\Rect::fromSize($bitmap->size())
         )->toBitmap($bitmap->size())
     ))
-    ->addSlide(new Slides\BigImage(
+    ->addSlide(new Slides\TitleAndImage(
+            "Events Loop",
     // Bug workaround: PNG has to be converted in BMP
         $drawer->clear()->drawBitmap(
             $bitmap = $bitmapLoader->fromFile(__DIR__.'/assets/SDL_poll.png'),
