@@ -35,8 +35,10 @@ $presentation
         $bitmapSeqLoader->fromFile(__DIR__.'/assets/boring.gif')
     ))
     ->addSlide(new Slides\BigText("What about\n…"))
+    ->addSlide(new Slides\BigText("Software?", Graphic\Color::RGB(234, 12, 128)))
     ->addSlide(new Slides\BigText("Music?", Graphic\Color::blue()))
     ->addSlide(new Slides\BigText("GUI?", Graphic\Color::red()))
+    ->addSlide(new Slides\BigText("Data\nVisualization?", Graphic\Color::RGB(128, 12, 234)))
     ->addSlide(new Slides\BigText("Video\nGames?", Graphic\Color::green()))
     ->addSlide(new Slides\Gif(
         $bitmapSeqLoader->fromFile(__DIR__.'/assets/confused.gif')
@@ -81,7 +83,7 @@ $presentation
             $bitmapSeqLoader->fromFile(__DIR__.'/assets/phpokoban.gif'))
     )
     ->addSlide(new Slides\GitRepo(
-        "Inphpinity",
+        "InPhpinity",
         "https://github.com/b-viguier/Inphpinity"
     ))
     ->addSlide(new Slides\Gif(
@@ -96,7 +98,7 @@ $presentation
         "ForumPhp2019-LT",
         "https://github.com/b-viguier/ForumPhp2019-LT"
     ))
-    ->addSlide(new Slides\BigText("Why?!?"))
+    ->addSlide(new Slides\BigText("Why\n?!?"))
     ->addSlide(new Slides\Quote(
         $bitmapLoader->fromFile(__DIR__.'/assets/twain.jpg'),
         "They did not\nknow it was\nimpossible,\nso they did it\n…\nin PHP")

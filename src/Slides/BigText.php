@@ -33,8 +33,8 @@ class BigText implements Slide
         // Fix font size to fit the screen
         $font = $font->withSize(
             $font->size() * min(
-                $screen->safeArea()->size()->height() / $text->area()->size()->height(),
-                $screen->safeArea()->size()->width() / $text->area()->size()->width()
+                $screen->safeArea()->size()->height()*0.9 / $text->area()->size()->height(),
+                $screen->safeArea()->size()->width()*0.9 / $text->area()->size()->width()
             )
         );
         $text = $drawer->createText($this->text, $font);
