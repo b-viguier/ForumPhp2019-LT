@@ -44,11 +44,11 @@ $presentation
         $bitmapSeqLoader->fromFile(__DIR__.'/assets/confused.gif')
     ))
     ->addSlide(new Slides\BigImage($bitmapLoader->fromFile(__DIR__.'/assets/php.png')))
-    ->addSlide(new Slides\BigImage($bitmapLoader->fromFile(__DIR__.'/assets/SDL.png')))
     ->addSlide(new Slides\Quote(
         $bitmapLoader->fromFile(__DIR__.'/assets/rasmus.png'),
         "There's an\nextension\nfor that!"
     ))
+    ->addSlide(new Slides\BigImage($bitmapLoader->fromFile(__DIR__.'/assets/SDL.png')))
     ->addSlide(new Slides\GitRepo(
         "PHP-SDL",
         "https://github.com/Ponup/php-sdl"
