@@ -4,15 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "165c4212fb41837d4cca37fe1df0d8d2",
+    "content-hash": "c0c3de4b505618d139ab7ceabc0c726e",
     "packages": [
         {
             "name": "bviguier/phpresent",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:b-viguier/PhPresent.git",
-                "reference": "49ded512ed6c24c1e8353b5f25be87d4247ff5da"
+                "url": "https://github.com/b-viguier/PhPresent.git",
+                "reference": "942e8b480cd0d14a750879933bba2b886d9cd915"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/b-viguier/PhPresent/zipball/942e8b480cd0d14a750879933bba2b886d9cd915",
+                "reference": "942e8b480cd0d14a750879933bba2b886d9cd915",
+                "shasum": ""
             },
             "require": {
                 "ext-imagick": "^3.4",
@@ -29,28 +35,7 @@
                     "PhPresent\\": "src/"
                 }
             },
-            "scripts": {
-                "analyse": [
-                    "@php ./vendor/bin/phpstan --level=max analyse src/ examples/"
-                ],
-                "cs": [
-                    "@php ./vendor/bin/php-cs-fixer fix --dry-run --diff"
-                ],
-                "cs-fix": [
-                    "@php ./vendor/bin/php-cs-fixer fix"
-                ],
-                "cs-ci": [
-                    "@php ./vendor/bin/php-cs-fixer fix --dry-run --using-cache=no --verbose"
-                ],
-                "deps": [
-                    "@php ./vendor/bin/deptrac"
-                ],
-                "ci": [
-                    "@analyse",
-                    "@cs-ci",
-                    "@deps"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -61,7 +46,7 @@
                 }
             ],
             "description": "Create and run presentation from Php.",
-            "time": "2019-10-20T15:19:21+00:00"
+            "time": "2019-10-23T15:52:15+00:00"
         }
     ],
     "packages-dev": [],
