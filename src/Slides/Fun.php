@@ -42,6 +42,24 @@ class Fun implements Slide
         $this->frame = new Frame(
             Sprite::fromBitmap($bitmap)->moved($rect->topLeft())
         );
+
+        // Credits
+        $drawer->clear();
+        $font = Graphic\Font::createDefaultMono()
+            ->withSize($font->size() / 5)
+            ->withBrush($font->brush()
+                ->withFillColor($urlColor = Graphic\Color::blue())
+                ->withStrokeColor($urlColor)
+            )
+            ->withAlignment(Graphic\Font::ALIGN_CENTER);
+
+        $text = $drawer->createText("@b_viguier", $font);
+        $bitmap = $drawer->drawText($text)
+            ->toBitmap($text->area()->size());
+        $this->frame = $this->frame->withPushedSprites(
+            Sprite::fromBitmap($bitmap)->moved(
+                $screen->fullArea()->bottomRight()->movedBy($bitmap->size()->toVector()->scaledBy(-1)))
+        );
     }
 
     public function render(Timestamp $timestamp, Screen $screen, Graphic\Drawer $drawer, Graphic\Theme $theme)
